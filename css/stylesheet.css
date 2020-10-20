@@ -2,11 +2,95 @@
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
 
+body *, body *::before,body *::after{
+  box-sizing: border-box;
+}
+
+
+html{
+  font-size: 10px;
+}
 body{
   font-family: 'Spoqa Han Sans', 'Sans-serif';
+  font-size: 1.4rem;
+  /* rem은 root에서 상속받은 값 * 숫자 */
+  color: #181818;
+  background: #fff;
 }
+
+/* body{
+  display: flex;
+  flex-flow: column nowrap; 
+  /* flex를 쓸경우 flex같이 써주기 */
+  /* align-items: center; */
+/* }  */
 
 /* 스킵 네비게이션 */
 .skip-nav{
   display: none;
 }
+
+.header, .visual, .main, .slogan{
+  width: 940px;
+  margin: 0 auto;
+}
+
+/* 레이아웃 */
+.header{
+  background: yellow;
+}
+
+.visual{
+  background: lime;
+  height: 120px;
+}
+
+.main{
+  background: skyblue;
+  padding: 30px 15px;
+  /* display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center; */
+  overflow: hidden;
+  min-height: 450px;
+}
+
+/* .clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+} */
+
+.group{
+  
+  margin: 0 15px;
+  float: left;
+}
+.group1{
+  background: blueviolet;
+  width: 250px;
+  
+}
+
+.group2{
+  background: lightgreen;
+  width: 380px;
+  
+}
+
+.group3{
+  background: tomato;
+  width: 190px;
+  
+}
+
+.slogan{
+  background: orange;
+}
+
+.footer{
+  background: pink;
+  /* width: 100%; */
+}
+
