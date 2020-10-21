@@ -20,13 +20,14 @@ body{
 /* 링크 스타일 */
 a{
   color: inherit;
+  /* body의 속성인 #181818을 물려받음 */
   text-decoration: none;
 }
 
 /* body{
   display: flex;
   flex-flow: column nowrap; 
-  /* flex를 쓸경우 flex같이 써주기 */
+  /* flex를 쓸경우 flex-flow 같이 써주기 */
   /* align-items: center; */
 /* }  */
 
@@ -98,7 +99,6 @@ a{
 } */
 
 .group{
-  
   margin: 0 15px;
   float: left;
 }
