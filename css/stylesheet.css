@@ -2,6 +2,16 @@
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
 
+/* 숨김 제목 및 숨김 콘텐츠 */
+.a11y-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 body *, body *::before,body *::after{
   box-sizing: border-box;
 }
@@ -15,7 +25,7 @@ body{
   font-size: 1.4rem;
   /* rem은 root에서 상속받은 값 * 숫자 */
   color: #181818;
-  background: #fff;
+  background: #ccc;
 }
 /* 링크 스타일 */
 a{
@@ -45,7 +55,7 @@ a{
 
 /* 헤더 */
 .header{
-  background: yellow;
+  background: #fff;
   position: relative;
   border-radius: 0 0 15px 15px;
   padding: 0 30px;
@@ -76,6 +86,114 @@ a{
   padding: 6px 0;
   display: inline-block;
 }
+
+/* 네비게이션 */
+.navigation{
+  padding-bottom: 35px;
+}
+.menu{
+  background: linear-gradient(
+    to bottom,
+     #ffa332 0%,
+     #ed6e25 35%,
+     #ed6e25 70%,
+     #ffa332 100%
+     );
+  border-top: 2px solid currentColor;
+  margin: 10px 0 0 0;
+  padding-left: 225px;
+  list-style: none;
+  height: 47px;
+  border-radius: 0 0 5px 5px;
+  
+  
+}
+
+.menu-item{
+  position: relative;
+  float: left;
+}
+
+
+.menu-button{
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 700;
+  background: transparent;
+  display: block;
+  line-height: 45px;
+  padding: 0 20px;
+  border: 0;
+  border-left: 2px solid rgba(255,255,255,.5);
+  text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000 ; 
+}
+
+.menu-act .menu-button{
+  color:#ff0;
+}
+
+.menu-act .menu-button::after{
+  content: "";
+  display: block;
+  /* 밑으로 내려갈수 있도록 block을 줌 */
+  border-top: 2px solid #000;
+}
+
+.sub-menu{
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 47px;
+  /* left: 0; */
+  /* 이 속성을 줘서 header를 기준으로 작동, li를 기준으로 잡으면 검색창을 추가해도 offset을 바꾸지 않아도됨 */
+  white-space: nowrap; 
+  /* 이속성을 사용해서 줄바꿈을 금지시켜 수평정렬 */
+}
+.sub-menu li,
+.sub-menu a {
+  display: inline-block;
+  /* .sub-menu li : li(부모)의 공간이 없어서 수평정렬이 안됨  */
+  /* sub-menu a : padding값을 주려고 */
+
+}
+
+.sub-menu a{
+  padding: 8px 0;
+  margin-right: 10px;
+}
+
+.sub-menu a::before{
+  content: '\f192';
+  font-family: 'fontello';
+  display: inline-block;
+  text-decoration: inherit;
+  width:1em;
+  margin-right: .2em;
+}
+
+.sub-menu a:hover::before, .sub-menu a:focus::before{
+  content: '\e800';
+}
+
+.menu-act .sub-menu{
+  display: block;
+}
+
+.sub-menu1, .sub-menu2, .sub-menu3 {
+  left: 0;
+}
+
+
+.sub-menu4, .sub-menu5, .sub-menu6 {
+  
+  /* white-space를 써서 서브메뉴가 밖으로 벗어남 */
+  right: 0;
+
+}
+
 .visual{
   background: lime;
   height: 120px;
