@@ -3,13 +3,18 @@
 @import url(./fontello.css);
 
 /* 숨김 제목 및 숨김 콘텐츠 */
-.a11y-hidden{
+.a11y-hidden legend{
   position: absolute;
   width: 1px;
   height: 1px;
   margin: 0;
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
+  /* 하위 호환성을 위해 rect를 줌 */
+  clip: rect(0 0 0 0); 
+  /* IE 구형브라우저는 ,를 인식하지 않음 */
+  clip: rect(0,0,0,0);
+  
 }
 
 body *, body *::before,body *::after{
@@ -289,10 +294,45 @@ a{
   float: left;
 }
 .group1{
-  background: blueviolet;
+  background: linear-gradient(
+    to bottom,
+     #ffa332 0%,
+     #ed6e25 35%,
+     #ed6e25 70%,
+     #ffa332 100%
+     );
   width: 250px;
   border-radius: 10px;
 }
+
+.login{
+  padding: 10px;
+  /* background: #fff; */
+}
+
+
+.login .login-heading{
+  font-size: 14px;
+  color: yellow;
+  font-weight: 700;
+  padding: 0 10px;
+}
+
+
+
+.user-email #userEmail{
+  
+}
+
+.login-member{
+  padding: 0;
+}
+
+.login-member li{
+  list-style: none;
+  display: inline-block;
+}
+
 
 .group2{
   background: lightgreen;
