@@ -167,6 +167,7 @@ a{
 
 .sub-menu a::before{
   content: '\f192';
+  /* \를 만나면 스크린리더기가 안읽어주지만 그래도 aria-hidden사용 */
   font-family: 'fontello';
   display: inline-block;
   text-decoration: inherit;
@@ -196,6 +197,7 @@ a{
 
 /* 텍스트 및 배경 애니메이션 - 비주얼 */
 .visual{
+  
   height: 120px;
   position: relative;
 }
@@ -289,7 +291,7 @@ a{
 .group1{
   background: blueviolet;
   width: 250px;
-  
+  border-radius: 10px;
 }
 
 .group2{
