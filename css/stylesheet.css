@@ -440,6 +440,32 @@ a{
   color: #f00;
 }
 
+/* 용어 */
+/* .term {
+  background: #ddd;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+.term h2{
+  font-size: 1.2em;
+}
+
+.term dl {
+  padding-left: 70px;
+  background: url(../images/web_standards.gif) no-repeat;
+}
+
+.term dt {
+  margin-bottom: 7px;
+  color: blue;
+}
+
+.term dd {
+  margin: 0;
+} */
+
 .slogan{
   background: orange;
 }
