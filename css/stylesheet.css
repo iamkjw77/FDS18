@@ -3,7 +3,7 @@
 @import url(./fontello.css);
 
 /* 숨김 제목 및 숨김 콘텐츠 */
-.a11y-hidden legend{
+.a11y-hidden, legend{
   position: absolute;
   width: 1px;
   height: 1px;
@@ -153,7 +153,7 @@ a{
   position: absolute;
   top: 47px;
   /* left: 0; */
-  /* 이 속성을 줘서 header를 기준으로 작동, li를 기준으로 잡으면 검색창을 추가해도 offset을 바꾸지 않아도됨 */
+  /* 이 속성을 줘서 li를 기준으로 작동, li를 기준으로 잡으면 검색창을 추가해도 offset을 바꾸지 않아도됨 */
   white-space: nowrap; 
   /* 이속성을 사용해서 줄바꿈을 금지시켜 수평정렬 */
 }
@@ -176,6 +176,7 @@ a{
   font-family: 'fontello';
   display: inline-block;
   text-decoration: inherit;
+  /* fontello에서 가져온 값으로, 현재 페이지의 text-decoration값을 상속받겠다. */
   width:1em;
   margin-right: .2em;
 }
@@ -273,8 +274,8 @@ a{
 }
 
 .main{
-  background: skyblue;
-  padding: 30px 15px;
+  background: #fff;
+  
   /* display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -290,60 +291,133 @@ a{
 } */
 
 .group{
-  margin: 0 15px;
+  margin: 0 10px;
   float: left;
 }
 .group1{
-  background: linear-gradient(
-    to bottom,
-     #ffa332 0%,
-     #ed6e25 35%,
-     #ed6e25 70%,
-     #ffa332 100%
-     );
   width: 250px;
   border-radius: 10px;
-}
-
-.login{
-  padding: 10px;
-  /* background: #fff; */
-}
-
-
-.login .login-heading{
-  font-size: 14px;
-  color: yellow;
-  font-weight: 700;
-  padding: 0 10px;
-}
-
-
-
-.user-email #userEmail{
   
 }
 
-.login-member{
-  padding: 0;
-}
-
-.login-member li{
-  list-style: none;
-  display: inline-block;
-}
 
 
 .group2{
-  background: lightgreen;
+  
   width: 380px;
   
 }
 
 .group3{
-  background: tomato;
+  
   width: 190px;
   
+}
+
+/* 로그인 */
+
+.login{
+  background: radial-gradient(circle at right top, #ffa332,#ed6e25);
+  /* 오른쪽 상단부터 진행되는 원형 그라디언트 */
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 0 #ccc;
+  padding: 10px 15px;
+  /* h2가 가진 마진때문에 더 넓어보임 */
+}
+
+
+.login-heading{
+  margin: 0;
+  color: #ff0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  /* h2가 div가 되는 순간 h2가 가진 font-weight이 없어짐, 700은 h2와 같은 굵기지만 안전성으로 줌 */
+  text-indent: 10px;
+}
+
+.login-form{
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.login-form fieldset{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-email, .user-pw {
+  margin-bottom: 5px;
+}
+
+.user-email *, .user-pw *{
+  vertical-align: top;
+}
+
+.login-form label{
+  display: inline-block;
+  /* label은 inline속성 */
+  width: 4em;
+  /* 현재글자 * 4로 주면 글자크기에 상자가 변하니까 em으로 적용*/
+}
+
+.login-form input{
+  width: 90px;
+  height: 22px;
+  border: 1px solid #ccc;
+  padding: 1px 1px 1px 0.5em;
+  /* 반글자만큼 왼쪽에 패딩을줌 */
+}
+
+.btn-login{
+  width: 50px;
+  height: 50px;
+  padding: 0 5px;
+  border: 0;
+  border-radius: 3px;
+  background: #ed6e25;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.login-member{
+  background: #fff;
+  padding: 2px 10px;
+  margin: 0;
+  list-style: none;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  letter-spacing: -1px;
+  /* 글자사이의 공간이 줄어듬 */
+  /* white-space: nowrap; */
+  /* 개행금지라서 회원가입, 아이디/비번찾기 각각의 글씨가 안떨어짐 */
+}
+
+.login-member li{
+  display: flex;
+  flex-flow: row nowrap;
+  /* 안에있는 a가 block이기때문에 부모인 li를 display: flex로 조정 */
+  align-items: center;
+  /* 아이콘은 가운데정렬하기 위한 코드 */
+}
+
+.login-member .icon-right-open{
+  color:  #ed6e25;
+}
+
+.login-member a {
+  display: block;
+  padding: 8px 0;
+  background: pink;
 }
 
 .slogan{

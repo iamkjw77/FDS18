@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="skip-nav"><a href="#">본문 바로가기</a></div>
-  <header class="header">
+  <header class="header"> 
     <h1 class="logo"><a href="#"><img src="./images/logo.png" alt="Web Cafe"></a></h1>
     <ul class="member">
       <li>
@@ -147,15 +147,15 @@
         <h2 class="login-heading">로그인</h2>
         <form method="POST" action="https://formspree.io/seulbinim@gmail.com" class="login-form">
           <fieldset>
-            <legend class="a11y-hidden">회원 로그인 폼</legend>
+            <legend>회원 로그인 폼</legend>
             <div class="user-email">
               <label for="userEmail">아이디</label>
-              <input type="email" id="userEmail" name="userEmail" placeholder="이메일주소" required />
+              <input type="email" id="userEmail" name="userEmail" placeholder="이메일주소" size="5" required />
             </div>
 
             <div class="user-pw">
               <label for="userPw">비밀번호</label>
-              <input type="password" id="userPw" name="userPw" placeholder="8자리이상" required />
+              <input type="password" id="userPw" name="userPw" placeholder="8자리이상" size="5" required />
             </div>
             <button class="btn-login" type="submit">로그인</button>
           </fieldset>
