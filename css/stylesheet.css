@@ -420,6 +420,26 @@ a{
   background: pink;
 }
 
+/* 유효성 검사 배너 */
+.validation-list {
+  list-style-type: none;
+  margin: 25px 0 0 0;
+  padding-left: 0;
+}
+
+.validation-list a {
+  display: block;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  padding: 8px 10px 8px 50px;
+  background: url(./images/validation_icon.png) no-repeat 25px 50% / 20px 20px, linear-gradient(to bottom, #eee, #eee);
+  margin-top: 10px;
+}
+
+.validation-list a:hover, .validation-list a:focus{
+  color: #f00;
+}
+
 .slogan{
   background: orange;
 }
