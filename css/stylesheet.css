@@ -524,21 +524,20 @@ a{
   border-radius: 3px;
   padding: 1px 1px 1px 0.5em;
   height: 22px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   width: 190px;
   /* width값을 지정해서 파이어폭스에서 fieldset을 나가지않게 */
   /* 폼이 아니었다면 flex-grow가 적용이되지만, flex-grow를 쓰면 파이어폭스에서 적용X */
   /* margin: 0 5px; */
 }
 
-.search-form btn-search{
+.btn-search{
   background: #333;
   border: 1px solid #aaa;
   color: #fff;
   border-radius: 3px;
   height: 22px;
   padding: 0 10px;
-
 }
 
 .slogan{
