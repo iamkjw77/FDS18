@@ -321,7 +321,7 @@ a{
   /* 오른쪽 상단부터 진행되는 원형 그라디언트 */
   border-radius: 5px;
   box-shadow: 5px 5px 0 0 #ccc;
-  padding: 10px 15px;
+  padding: 15px 10px;
   /* h2가 가진 마진때문에 더 넓어보임 */
 }
 
@@ -417,7 +417,6 @@ a{
 .login-member a {
   display: block;
   padding: 8px 0;
-  background: pink;
 }
 
 /* 유효성 검사 배너 */
@@ -440,31 +439,76 @@ a{
   color: #f00;
 }
 
-/* 용어 */
-/* .term {
-  background: #ddd;
+/* 웹 관련 용어 */
+.term {
+  background: linear-gradient(#ccc, #eee);
   border: 1px solid #aaa;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 5px;
   margin-top: 20px;
-  padding: 0 10px;
 }
-.term h2{
-  font-size: 1.2em;
+.term-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  /* 안정성을 위해 font-weight을 줌 */
+}
+.term-list {
+  margin: 15px 0 0 0;
+  /* 원래 dl의 margin은 1em만큼의 margin-top, margin-bottom이 생김 */
+  background: yellow;
+ 
+}
+.term-list > div{
+  overflow: hidden;
+  background: skyblue;
 }
 
-.term dl {
-  padding-left: 70px;
-  background: url(../images/web_standards.gif) no-repeat;
+.term-list div:nth-child(even){
+  margin-top: 15px;
 }
 
-.term dt {
-  margin-bottom: 7px;
-  color: blue;
+.term-list-subject, .term-list-brief {
+  background: pink;
+  float: right;
+  width: 145px;
+  /* subject는 width값을 줘서, 왼쪽으로 밀어버리고/ brief는 width값을 줘서 전체사이즈를 못가지게 함으로써 subject 밑으로 배치됨 */
 }
 
-.term dd {
-  margin: 0;
-} */
+.term-list-subject{
+  color: #71818d;
+}
+
+.term-list-thumbnail {
+  background: lime;
+  float: left;
+  /* float:left가 되지 않으면, brief가 (썸네일은 normal-flow니까) 라인박스 밖으로 배치됨 */
+}
+
+.term-list-thumbnail img{
+  display: block;
+  /* 아래 아주 조금의 margin값을 없애기 위한방법  */
+  /* block영역 안에 inline상자가 배치되면 baseline에 배치됨 그래서 아주조금의 margin이 생김 */
+}
+.term-list-brief {
+  background: orange;
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.term-list dd {
+ margin-left: 0;
+}
+
+.term-list div:nth-child(even) .term-list-subject,
+.term-list div:nth-child(even) .term-list-brief{
+  float: left;
+}
+
+.term-list div:nth-child(even) .term-list-thumbnail{
+  float: right;
+}
 
 .slogan{
   background: orange;
