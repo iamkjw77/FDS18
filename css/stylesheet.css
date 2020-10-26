@@ -110,15 +110,12 @@ a{
   list-style: none;
   height: 47px;
   border-radius: 0 0 5px 5px;
-  
-  
 }
 
 .menu-item{
   position: relative;
   float: left;
 }
-
 
 .menu-button{
   cursor: pointer;
@@ -162,7 +159,6 @@ a{
   display: inline-block;
   /* .sub-menu li : li(부모)의 공간이 없어서 수평정렬이 안됨  */
   /* sub-menu a : padding값을 주려고 */
-
 }
 
 .sub-menu a{
@@ -202,11 +198,6 @@ a{
 }
 
 /* 텍스트 및 배경 애니메이션 - 비주얼 */
-.visual{
-  
-  height: 120px;
-  position: relative;
-}
 
 @keyframes textAni{
   0%{
@@ -228,6 +219,11 @@ a{
   100%{
     opacity: 0;
   }
+}
+
+.visual{
+  height: 120px;
+  position: relative;
 }
 
 .visual::before, .visual::after{
@@ -275,11 +271,11 @@ a{
 
 .main{
   background: #fff;
-  
   /* display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center; */
+  padding: 30px 15px;
   overflow: hidden;
   min-height: 450px;
 }
@@ -291,27 +287,19 @@ a{
 } */
 
 .group{
-  margin: 0 10px;
+  margin: 0 15px;
   float: left;
 }
 .group1{
   width: 250px;
-  border-radius: 10px;
-  
 }
 
-
-
 .group2{
-  
   width: 380px;
-  
 }
 
 .group3{
-  
   width: 190px;
-  
 }
 
 /* 로그인 */
@@ -324,7 +312,6 @@ a{
   padding: 15px 10px;
   /* h2가 가진 마진때문에 더 넓어보임 */
 }
-
 
 .login-heading{
   margin: 0;
@@ -356,7 +343,7 @@ a{
 }
 
 .user-email *, .user-pw *{
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .login-form label{
@@ -457,12 +444,10 @@ a{
 .term-list {
   margin: 15px 0 0 0;
   /* 원래 dl의 margin은 1em만큼의 margin-top, margin-bottom이 생김 */
-  background: yellow;
  
 }
 .term-list > div{
   overflow: hidden;
-  background: skyblue;
 }
 
 .term-list div:nth-child(even){
@@ -470,7 +455,6 @@ a{
 }
 
 .term-list-subject, .term-list-brief {
-  background: pink;
   float: right;
   width: 145px;
   /* subject는 width값을 줘서, 왼쪽으로 밀어버리고/ brief는 width값을 줘서 전체사이즈를 못가지게 함으로써 subject 밑으로 배치됨 */
@@ -481,7 +465,6 @@ a{
 }
 
 .term-list-thumbnail {
-  background: lime;
   float: left;
   /* float:left가 되지 않으면, brief가 (썸네일은 normal-flow니까) 라인박스 밖으로 배치됨 */
 }
@@ -492,7 +475,6 @@ a{
   /* block영역 안에 inline상자가 배치되면 baseline에 배치됨 그래서 아주조금의 margin이 생김 */
 }
 .term-list-brief {
-  background: orange;
   margin-top: 5px;
   line-height: 1.5;
 }
@@ -508,6 +490,55 @@ a{
 
 .term-list div:nth-child(even) .term-list-thumbnail{
   float: right;
+}
+
+/* 검색폼 */
+.search-form {
+  background: #ccc linear-gradient(#ccc, #eee);
+  /* #ccc는 콜백 color, linear-gradient를 지원하지 않는 브라우저에서는 단색으로 나타나게 */
+  border: 1px solid #aaa;
+  border-bottom-color:#fff;
+  /* 또는 border-bottom-color:transparent */
+  /* 또는 border-bottom: 0을 줘도됨 */
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px;
+}
+
+.search-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.search-form-container {
+  display: flex;
+  /* fieldset은 크롬브라우저를 제외한 나머지는 display: flex를 인식하지 못함 */
+  /* 그래서 div를 줘서 그언에 주면 인식함 */
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-form [name="search"] {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 1px 1px 1px 0.5em;
+  height: 22px;
+  flex-grow: 1;
+  width: 190px;
+  /* width값을 지정해서 파이어폭스에서 fieldset을 나가지않게 */
+  /* 폼이 아니었다면 flex-grow가 적용이되지만, flex-grow를 쓰면 파이어폭스에서 적용X */
+  /* margin: 0 5px; */
+}
+
+.search-form btn-search{
+  background: #333;
+  border: 1px solid #aaa;
+  color: #fff;
+  border-radius: 3px;
+  height: 22px;
+  padding: 0 10px;
+
 }
 
 .slogan{
