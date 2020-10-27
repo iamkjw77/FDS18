@@ -446,8 +446,9 @@ a{
   /* 원래 dl의 margin은 1em만큼의 margin-top, margin-bottom이 생김 */
  
 }
-.term-list > div{
-  overflow: hidden;
+.term-list .odd{
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .term-list div:nth-child(even){
@@ -455,28 +456,34 @@ a{
 }
 
 .term-list-subject, .term-list-brief {
-  float: right;
-  width: 145px;
+  
   /* subject는 width값을 줘서, 왼쪽으로 밀어버리고/ brief는 width값을 줘서 전체사이즈를 못가지게 함으로써 subject 밑으로 배치됨 */
 }
 
 .term-list-subject{
   color: #71818d;
+  flex-basis: 0;
+  flex-grow: 2;
 }
 
 .term-list-thumbnail {
-  float: left;
+  order: -1;
+  flex-basis: 0;
+  flex-grow: 1;
+  
   /* float:left가 되지 않으면, brief가 (썸네일은 normal-flow니까) 라인박스 밖으로 배치됨 */
 }
 
 .term-list-thumbnail img{
-  display: block;
+  
   /* 아래 아주 조금의 margin값을 없애기 위한방법  */
   /* block영역 안에 inline상자가 배치되면 baseline에 배치됨 그래서 아주조금의 margin이 생김 */
 }
 .term-list-brief {
   margin-top: 5px;
   line-height: 1.5;
+  flex-basis: 0;
+  flex-grow: 2;
 }
 
 .term-list dd {
@@ -485,17 +492,17 @@ a{
 
 .term-list div:nth-child(even) .term-list-subject,
 .term-list div:nth-child(even) .term-list-brief{
-  float: left;
+  
 }
 
 .term-list div:nth-child(even) .term-list-thumbnail{
-  float: right;
+  
 }
 
 /* 검색폼 */
 .search-form {
   background: #ccc linear-gradient(#ccc, #eee);
-  /* #ccc는 콜백 color, linear-gradient를 지원하지 않는 브라우저에서는 단색으로 나타나게 */
+  /* #ccc는 fallback color, linear-gradient를 지원하지 않는 브라우저에서는 단색으로 나타나게 */
   border: 1px solid #aaa;
   border-bottom-color:#fff;
   /* 또는 border-bottom-color:transparent */
