@@ -549,7 +549,6 @@ a{
 
 /* 공지사항 및 자료실 */
 .board {
-  background: yellow;
   position: relative;
   height: 200px;
   /* 높이를 지정하지 않은경우, 공지사항 및 자료실 밑에 section을 만들면 그 요소가 컨텐츠의 높이를 몰라서 공지사항 및 자료실 옆에 배치됨 */
@@ -572,8 +571,20 @@ a{
 }
 
 .tab {
-  float: left;
+  /* float: left; */
+  /* 공지사항과 자료실의 위치가 같으니까 자료실(h2) 위에 걸리는 normal-flow가 없으므로 float를 사용할수 있음 */
   margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.notice-heading {
+  left: 0;
+}
+
+.pds-heading {
+  left: 83px;
 }
 
 .tab a{
@@ -584,14 +595,17 @@ a{
   color: #999;
   font-size: 1.4rem;
   font-weight: 400;
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
-
+.is-active .tab {
+  z-index: 5;
+/* 활성화된 오렌지색 테두리가 위에 있도록 */
+}
 .is-active .tab a{
   color: #ed6e25;
   border-color: #ed6e25 #ed6e25 #fff #ed6e25;
   background: #fff;
-  /* background 단축속성을 사용했으면 여기서도 background 단축속성을 사용 */
+  /* 기본값에 background 단축속성을 사용했으면 여기서도 background 단축속성을 사용 */
   
 }
 
@@ -604,29 +618,33 @@ a{
 
 .notice-list a,
 .pds-list a{
-  background: lime;
   /* flex-grow: 1; */
-  /* flex-grow를 사용하면 text-overflow를 사용하지 못함 */
   /* 날짜와 아이콘을 뺀 나머지 공간을 1만큼차지 */
-  white-space: nowrap;
+  /* flex-grow를 사용하면 text-overflow를 사용하지 못함 */
   text-overflow: ellipsis;
   /* text-overflow은 한 줄일때만 사용가능한 속성 */
+  white-space: nowrap;
+  /* 개행이 안되게 한 줄로 만들어줌 */
   overflow: hidden;
   /* 한 줄을 제외한 나머지 코드는 숨겨줘 */
   width: 280px;
+  /* flex-grow를 줄 수 없으니까 width값을 알려줄 요소가 필요함 */
 }
 
 
 .notice-list, 
 .pds-list {
   width: 100%;
+  /* position: absolute;를 사용했기때문에 콘텐츠만큼 normal-flow를 가짐, 전체 사이즈가 빈공간이 없게 하기위해 width:100%을 줌 */
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  background: skyblue;
-  position: absolute;
+  padding-top: 45px;
+  min-height: 170px;
+  /* position: absolute;
   left: 0;
-  top: 45px;
+  top: 45px; */
+  /* position: absolute가 있으면 li>a의 항목의 개수가 늘어나면 유연하게 늘어나지 못함 */
 }
 
 
@@ -635,7 +653,6 @@ a{
   position: absolute;
   top: -8px;
   right: -8px;
-  background: pink;
   padding: 8px;
   /* 클릭할 수 있는 영역을 주기 위해서 padding을 주고, 그 값만큼 offset값을 바꿈 */
 }
