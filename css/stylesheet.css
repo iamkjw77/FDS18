@@ -547,6 +547,117 @@ a{
   padding: 0 10px;
 }
 
+/* 공지사항 및 자료실 */
+.board {
+  background: yellow;
+  position: relative;
+  height: 200px;
+  /* 높이를 지정하지 않은경우, 공지사항 및 자료실 밑에 section을 만들면 그 요소가 컨텐츠의 높이를 몰라서 공지사항 및 자료실 옆에 배치됨 */
+  margin-top: 20px;
+}
+
+.notice-list, 
+.pds-list,
+.notice-more,
+.pds-more{
+  display: none;
+}
+/* .is-active를 가지면 보이게(동적으로) */
+
+.is-active .notice-list, 
+.is-active .pds-list,
+.is-active .notice-more,
+.is-active .pds-more{
+  display: block;
+}
+
+.tab {
+  float: left;
+  margin: 0;
+}
+
+.tab a{
+  display: block;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #aaa;
+  background: #ccc linear-gradient(#ccc, #eee);
+  color: #999;
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding: 5px 10px;
+}
+
+.is-active .tab a{
+  color: #ed6e25;
+  border-color: #ed6e25 #ed6e25 #fff #ed6e25;
+  background: #fff;
+  /* background 단축속성을 사용했으면 여기서도 background 단축속성을 사용 */
+  
+}
+
+.notice-list li,
+.pds-list li{
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+
+.notice-list a,
+.pds-list a{
+  background: lime;
+  /* flex-grow: 1; */
+  /* flex-grow를 사용하면 text-overflow를 사용하지 못함 */
+  /* 날짜와 아이콘을 뺀 나머지 공간을 1만큼차지 */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* text-overflow은 한 줄일때만 사용가능한 속성 */
+  overflow: hidden;
+  /* 한 줄을 제외한 나머지 코드는 숨겨줘 */
+  width: 280px;
+}
+
+
+.notice-list, 
+.pds-list {
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  background: skyblue;
+  position: absolute;
+  left: 0;
+  top: 45px;
+}
+
+
+.notice-more,
+.pds-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: pink;
+  padding: 8px;
+  /* 클릭할 수 있는 영역을 주기 위해서 padding을 주고, 그 값만큼 offset값을 바꿈 */
+}
+/* 꾸미기 값은 기본값으로 .is-active가 생기면 보이게  */
+
+.notice-more::before,
+.pds-more::before {
+  color: hsla(110, 50%, 30%, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .slogan{
   background: orange;
 }
