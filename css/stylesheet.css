@@ -444,11 +444,9 @@ a{
 .term-list {
   margin: 15px 0 0 0;
   /* 원래 dl의 margin은 1em만큼의 margin-top, margin-bottom이 생김 */
- 
 }
-.term-list .odd{
-  display: flex;
-  flex-flow: column wrap;
+.term-list > div{
+  overflow: hidden;
 }
 
 .term-list div:nth-child(even){
@@ -456,34 +454,28 @@ a{
 }
 
 .term-list-subject, .term-list-brief {
-  
+  float: right;
+  width: 145px;
   /* subject는 width값을 줘서, 왼쪽으로 밀어버리고/ brief는 width값을 줘서 전체사이즈를 못가지게 함으로써 subject 밑으로 배치됨 */
 }
 
 .term-list-subject{
   color: #71818d;
-  flex-basis: 0;
-  flex-grow: 2;
 }
 
 .term-list-thumbnail {
-  order: -1;
-  flex-basis: 0;
-  flex-grow: 1;
-  
+  float: left;
   /* float:left가 되지 않으면, brief가 (썸네일은 normal-flow니까) 라인박스 밖으로 배치됨 */
 }
 
 .term-list-thumbnail img{
-  
+  display: block;
   /* 아래 아주 조금의 margin값을 없애기 위한방법  */
   /* block영역 안에 inline상자가 배치되면 baseline에 배치됨 그래서 아주조금의 margin이 생김 */
 }
 .term-list-brief {
   margin-top: 5px;
   line-height: 1.5;
-  flex-basis: 0;
-  flex-grow: 2;
 }
 
 .term-list dd {
@@ -492,11 +484,11 @@ a{
 
 .term-list div:nth-child(even) .term-list-subject,
 .term-list div:nth-child(even) .term-list-brief{
-  
+  float: left;
 }
 
 .term-list div:nth-child(even) .term-list-thumbnail{
-  
+  float: right;
 }
 
 /* 검색폼 */
@@ -550,8 +542,9 @@ a{
 /* 공지사항 및 자료실 */
 .board {
   position: relative;
-  height: 200px;
+  /* height: 200px; */
   /* 높이를 지정하지 않은경우, 공지사항 및 자료실 밑에 section을 만들면 그 요소가 컨텐츠의 높이를 몰라서 공지사항 및 자료실 옆에 배치됨 */
+  /* 요소에 따라 유연하게 늘어나게하려고 높이를 주석 */
   margin-top: 20px;
 }
 
@@ -631,7 +624,6 @@ a{
   /* flex-grow를 줄 수 없으니까 width값을 알려줄 요소가 필요함 */
 }
 
-
 .notice-list, 
 .pds-list {
   width: 100%;
@@ -662,6 +654,108 @@ a{
 .pds-more::before {
   color: hsla(110, 50%, 30%, 1);
 }
+
+/* 새소식 */
+.news{
+  margin-top: 20px;
+  position: relative;
+}
+
+.news::before{
+  content: "";
+  /* content가 있어야 상자가 만들어짐 */
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  /* 높이와 너비를 줘야 보임 */
+  /* border-image도 만들수 있지만 까다로움 */
+  background: #ccc linear-gradient(to right, #ccc, #fff);
+  /* 오른쪽으로 그라디언트 : to right */
+}
+
+.news-heading{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ed6e25;
+  margin: 0;
+}
+
+.news-article{
+  margin-top: 35px;
+}
+
+.news-article-link{
+  display: grid;
+  /* 이제 더이상 inline이 아닌 grid 상자 */
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: auto auto auto;
+  /* 행이 3개 */
+  /* 높이를 정해주는 것이 아니라 자동으로 유연하게 auto로 설정 */
+  grid-template-areas: 'thumbnail subject'
+                       'thumbnail date'
+                       'thumbnail brief';
+  /* 순서만 바꿔도 화면 순서가 바뀜 */
+}
+
+.new-article-brief{
+  margin: 10px 0 0;
+  /* grid-area: 3 / 2; */
+  grid-area: brief;
+  line-height: 1.5;
+}
+
+.news-article-thumbnail{
+  margin: 0;
+  /* grid-area: 1 / 1 / 4 / 2; */
+  grid-area: thumbnail;
+  
+}
+
+.news-article-thumbnail img{
+  box-shadow: 0 15px 10px 0 #aaa;
+}
+
+
+.news-article-thumbnail figcaption{
+  margin-right: 18px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.news-article-subject{
+  margin: 0 0 5px 0;
+  /* grid-area: 1/2; */
+  grid-area: subject;
+  font-size: 1.5rem;
+}
+
+.news-article-date{
+  /* grid-area: 2 / 2; */
+  grid-area: date;
+}
+
+.news-more{
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+.news-more::before{
+  color: hsla(110, 50%, 30%, 1);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
