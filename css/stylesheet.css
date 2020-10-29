@@ -747,13 +747,64 @@ a{
   color: hsla(110, 50%, 30%, 1);
 }
 
+/* 신규이벤트 및 관련사이트 */
+.gradient-box {
+  background: #ccc linear-gradient(#ccc, #eee);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+}
 
+.event{
+  position: relative;
+}
 
+.event-heading, .related-heading{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
 
+.point-color{
+  color: #ed702d;
+}
 
+.event-thumbnail img{
+  /* background: red; */
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #aaa;
+}
 
+.event-brief{
+   line-height: 1.5;
+}
 
+.event-brief em{
+  font-style: normal;
+}
 
+.btn-event{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn-prev, 
+.btn-next {
+  border: 0;
+  padding: 18px 0 0 0;
+  overflow: hidden;
+   /* 글씨가 보이면 감춰줘 */
+  height: 18px;
+  /* 밑에서 padding을 줘서 글자를 밀었으니까, 그 텍스트만큼 상자가 안늘어나게 높이를 줌, 텍스트를 아예 안주는 aria-label을 줄 수 있음 */
+  /* padding을 줘서 글자를 밀어버림 */
+  width: 19px;
+  background: transparent url(./images/back_forward.png) 0 0 no-repeat;
+}
+
+.btn-next {
+  background-position: -36px 0;
+}
 
 
 
