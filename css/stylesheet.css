@@ -203,12 +203,12 @@ a{
   0%{
     font-size: 12px;
     color: rgba(0,0,0,0);
-    transform: translate(0,0)
+    transform: translate(0,0);
   }
   100%{
     font-size: 24px;
     color: rgba(0,0,0,1);
-    transform: translate(400px,75px)
+    transform: translate(400px,75px);
   }
 }
 
@@ -757,6 +757,7 @@ a{
 
 .event{
   position: relative;
+  border-bottom: 1px solid #aaa;
 }
 
 .event-heading, .related-heading{
@@ -806,7 +807,38 @@ a{
   background-position: -36px 0;
 }
 
+.related{
+  padding-top: 10px;
+}
 
+.related-list{
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 0 0;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  height: 27px;
+  overflow: hidden;
+  transition: height 400ms, padding 400ms 400ms;
+  /* 마우스가 시작하는 지점에 transition을 줘야함 */
+}
+
+.related-list a{
+  display: block;
+  /* 마우스영역을 늘어나게 */
+  line-height: 20px;
+  padding-left: 20px;
+}
+
+.related-list:hover{
+  height: 147px;
+  padding: 10px 0;
+}
+
+.related-list li{
+  padding: 2px 5px 3px 5px;
+}
 
 
 
