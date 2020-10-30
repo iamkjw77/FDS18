@@ -30,7 +30,7 @@ body{
   font-size: 1.4rem;
   /* rem은 root에서 상속받은 값 * 숫자 */
   color: #181818;
-  background: #ccc;
+  background: #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
 }
 /* 링크 스타일 */
 a{
@@ -856,7 +856,6 @@ a{
 }
 
 .favorite-list{
-  background-color: yellow;
   margin: 10px 0 0 0;
   padding-left: 0;
   /* overflow: hidden; */
@@ -865,7 +864,6 @@ a{
 }
 
 .favorite-list li{
-  background-color: pink;
   margin-top: 8px;
   counter-increment: number;
   /* counter-reset을 안써줘도 초기값은 0 */
@@ -936,19 +934,57 @@ a{
   color: hsla(110, 50%, 30%, 1);
 }
 
-
-
-
-
-
-
+/* 슬로건 */
 
 .slogan{
-  background: orange;
+  position: relative;
+  padding: 0 70px 15px 180px;
 }
 
+.slogan-heading {
+  width: 110px;
+  height: 83px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 83px;
+  position: absolute;
+  left: 35px;
+  bottom: -35px;
+}
+
+.slogan-heading::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* slogan-heading기준 */
+  width: 100%;
+  height: 100%;
+  /* 지정하지 않으면 텍스트가 없기때문에 크기가 없음 */
+  background: url(./images/coffee.png) no-repeat 0 0;
+}
+
+
+.slogan-brief{
+  margin: 0;
+  color: #a09784;
+}
+
+.slogan-brief q::before{
+  font-size: 3.5rem;
+  position: relative;
+  top: 10px;
+  /* 앞에 "의 위치를 조정 */
+}
+
+.slogan-brief q::after{
+  content: "";
+  /* aspect뒤에 "를 없앰 */
+}
+
+/* 푸터 */
 .footer{
-  background: pink;
-  /* width: 100%; */
+  background: #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
 }
 
