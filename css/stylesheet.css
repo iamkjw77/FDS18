@@ -51,12 +51,12 @@ a{
   display: none;
 }
 
-.header, .visual, .main, .slogan{
+/* 레이아웃 */
+.header, .visual, .main, .slogan, .footer-inner{
   width: 940px;
   margin: 0 auto;
 }
 
-/* 레이아웃 */
 
 /* 헤더 */
 .header{
