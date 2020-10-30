@@ -760,11 +760,20 @@ a{
   border-bottom: 1px solid #aaa;
 }
 
-.event-heading, .related-heading{
+.event-heading, 
+.related-heading, 
+.favorite-heading{
   margin: 0;
   font-size: 1.6rem;
   font-weight: 700;
 }
+
+/* .group3 [class$="heading"]{
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.group3 [class$="heading"] //heading으로 끝나는 클래스만~ */
 
 .point-color{
   color: #ed702d;
@@ -840,10 +849,92 @@ a{
   padding: 2px 5px 3px 5px;
 }
 
+/* 인기 사이트 */
+.favorite {
+  position: relative;
+  margin-top: 20px;
+}
 
+.favorite-list{
+  background-color: yellow;
+  margin: 10px 0 0 0;
+  padding-left: 0;
+  /* overflow: hidden; */
+  /* 넘버링을 눈에 안보이게 overflow: hidden;으로 하면 안보이긴하지만, 보조기기에서는 읽어줌 */
+  list-style: none;
+}
 
+.favorite-list li{
+  background-color: pink;
+  margin-top: 8px;
+  counter-increment: number;
+  /* counter-reset을 안써줘도 초기값은 0 */
+  /* display: flex;
+  flex-flow: row nowrap;
+  align-items: center; */
+  position: relative;
+}
 
+.up, .stop, .down{
+  position: absolute;
+  /* absolute되면서 자동으로 block이됨 */
+  right: 0;
+  top: 50%;
+  margin-top: -5px;
+  /* 가운데 있는 것처럼 만들기 위해서(IE9 이하버전에서 flex가 사용이 안될때) */
+  font-style: normal;
+  width: 9px;
+  height: 11px;
+  overflow: hidden;
+  /* padding을 이용해서 글씨가 안보이게 */
+  padding-top: 11px;
+  height: 0;
+  background: url(./images/rank.png) no-repeat;
+  
+}
 
+.favorite-list a{
+  margin-right: 5px;
+  /* flex-grow: 1; */
+  display: block;
+  margin: 0 10px 0 20px;
+}
+
+.favorite-list .up{
+  background-position: 0 0;
+  
+}
+.favorite-list .down{
+  background-position: 0 50%;
+}
+.favorite-list .stop{
+  background-position: 0 100%;
+}
+
+.favorite-list li::before{
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: counter(number);
+  background: #999;
+  padding: 2px 5px;
+  border-radius: 2px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.favorite-more{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 8px;
+}
+
+.favorite-more::before{
+  color: hsla(110, 50%, 30%, 1);
+}
 
 
 
