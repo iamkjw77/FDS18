@@ -32,6 +32,7 @@ body{
   color: #181818;
   background: url(./images/bg_flower.png) no-repeat 50% 0, #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
 }
+
 /* 링크 스타일 */
 a{
   color: inherit;
@@ -65,11 +66,9 @@ a{
 .skip-nav a:focus{
   height: auto;
   padding: 10px 0;
-  /* 포커스를 받으면 그 때 보여라 position: absolute → position: static */
+  /* 포커스를 받으면 그 때 보여라 height: 0; → height: auto; */
   outline: 0;
 }
-
-
 
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner{
@@ -189,6 +188,7 @@ a{
 .sub-menu a::before{
   content: '\f192';
   /* \를 만나면 스크린리더기가 안읽어주지만 그래도 aria-hidden사용 */
+  /* content=">" >를 사용하면 스크린 리더기는 읽어주는 정보로 간주됨(불필요한 정보를 읽어줌) */
   font-family: 'fontello';
   display: inline-block;
   text-decoration: inherit;
@@ -913,6 +913,7 @@ a{
 }
 
 .favorite-list a{
+  /* a태그에 inline-block을 줘서 width값을 줘서 늘려도되지만 아이콘이 커지면 떨어지므로 유연하지않음 */
   margin-right: 5px;
   /* flex-grow: 1; */
   display: block;
