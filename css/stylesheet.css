@@ -914,7 +914,6 @@ a{
 
 .favorite-list a{
   /* a태그에 inline-block을 줘서 width값을 줘서 늘려도되지만 아이콘이 커지면 떨어지므로 유연하지않음 */
-  margin-right: 5px;
   /* flex-grow: 1; */
   display: block;
   margin: 0 10px 0 20px;
